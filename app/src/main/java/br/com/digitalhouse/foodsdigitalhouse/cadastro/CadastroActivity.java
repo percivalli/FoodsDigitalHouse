@@ -2,6 +2,7 @@ package br.com.digitalhouse.foodsdigitalhouse.cadastro;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +12,15 @@ import android.widget.TextView;
 
 import br.com.digitalhouse.foodsdigitalhouse.R;
 import br.com.digitalhouse.foodsdigitalhouse.model.Place;
+import br.com.digitalhouse.foodsdigitalhouse.place.view.PlaceActivity;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    private EditText textInputLayoutName;
-    private EditText loginTextInputLayoutEmail;
-    private EditText loginTextInputLayoutPassword;
-    private EditText loginTextInputLayoutRepeat;
-    private Button btnRegister;
+    private TextInputLayout textInputLayoutName;
+    private TextInputLayout loginTextInputLayoutEmail;
+    private TextInputLayout loginTextInputLayoutPassword;
+    private TextInputEditText loginTextInputLayoutRepeat;
+    private Button btnRegisterSave;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +28,13 @@ public class CadastroActivity extends AppCompatActivity {
 
         inicializaViews();
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        btnRegisterSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (validadaCadastro()) {
+                if (validaCadastro()) {
 
-                    Intent intent = new Intent(CadastroActivity.this, Place.class);
+                    Intent intent = new Intent(CadastroActivity.this, PlaceActivity.class);
 
                     startActivity(intent);
                 }
@@ -43,19 +45,19 @@ public class CadastroActivity extends AppCompatActivity {
 
     public void inicializaViews() {
 
-        textInputLayoutName = findViewById(R.id.textInputLayoutName);
-        loginTextInputLayoutEmail = findViewById(R.id.loginTextInputLayoutEmail);
-        loginTextInputLayoutPassword = findViewById(R.id.loginTextInputLayoutPassword);
+        textInputLayoutName = findViewById(R.id.textInputLayoutNameCadastro);
+        loginTextInputLayoutEmail = findViewById(R.id.loginTextInputLayoutEmailCadastro);
+        loginTextInputLayoutPassword = findViewById(R.id.loginTextInputLayoutPasswordCadastro);
         loginTextInputLayoutRepeat = findViewById(R.id.loginTextInputLayoutRepeat);
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegisterSave = findViewById(R.id.btnRegisterSave);
 
     }
 
-    public boolean validadaCadastro() {
+    public boolean validaCadastro() {
 
-        String textNome = textInputLayoutName.getText().toString();
-        String textEmail = loginTextInputLayoutEmail.getText().toString();
-        String textPassword =  loginTextInputLayoutPassword.getText().toString();
+        String textNome = textInputLayoutName.getEditText().getText().toString();
+        String textEmail = loginTextInputLayoutEmail.getEditText().getText().toString();
+        String textPassword =  loginTextInputLayoutPassword.getEditText().getText().toString();
         String textRepeat = loginTextInputLayoutRepeat.getText().toString();
 
         if (textNome.isEmpty()) {

@@ -1,4 +1,4 @@
-package br.com.digitalhouse.foodsdigitalhouse.place.place.adapter;
+package br.com.digitalhouse.foodsdigitalhouse.place.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;

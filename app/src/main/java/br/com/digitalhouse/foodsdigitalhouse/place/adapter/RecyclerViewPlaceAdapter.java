@@ -1,4 +1,4 @@
-package br.com.digitalhouse.foodsdigitalhouse.place.place.adapter;
+package br.com.digitalhouse.foodsdigitalhouse.place.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -13,7 +13,7 @@ import java.util.List;
 
 import br.com.digitalhouse.foodsdigitalhouse.R;
 import br.com.digitalhouse.foodsdigitalhouse.model.Place;
-import br.com.digitalhouse.foodsdigitalhouse.place.place.listener.RecyclerViewPlaceClickListener;
+import br.com.digitalhouse.foodsdigitalhouse.place.listener.RecyclerViewPlaceClickListener;
 
 public class RecyclerViewPlaceAdapter extends RecyclerView.Adapter<RecyclerViewPlaceAdapter.ViewHolder> {
 

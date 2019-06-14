@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 
 import br.com.digitalhouse.foodsdigitalhouse.R;
 import br.com.digitalhouse.foodsdigitalhouse.cadastro.CadastroActivity;
@@ -13,9 +15,10 @@ import br.com.digitalhouse.foodsdigitalhouse.model.Place;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextInputLayout loginEmail;
-    private TextInputLayout loginPassword;
+    private EditText loginEmail;
+    private EditText loginPassword;
     private Button loginButtonLogin;
+    private CheckBox checkBoxLembrar;
     private Button loginButtonRegister;
 
     @Override
@@ -31,9 +34,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        loginEmail = findViewById(R.id.loginTextInputLayoutEmail);
-        loginPassword = findViewById(R.id.loginTextInputLayoutPassword);
+        loginEmail = findViewById(R.id.email);
+        loginPassword = findViewById(R.id.password);
         loginButtonLogin = findViewById(R.id.btnEntrar);
+        checkBoxLembrar = findViewById(R.id.checkboxLembrar);
         loginButtonRegister = findViewById(R.id.btnRegister);
     }
 
@@ -42,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String emailLog = loginEmail.getEditText().getText().toString();
-                String senhaLog = loginPassword.getEditText().getText().toString();
+                String emailLog = loginEmail.getText().toString();
+                String senhaLog = loginPassword.getText().toString();
 
                 loginEmail.setError("");
                 loginPassword.setError("");
@@ -70,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, Place.class);
+                Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                 startActivity(intent);
             }
         });

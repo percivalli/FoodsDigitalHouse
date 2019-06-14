@@ -1,4 +1,4 @@
-package br.com.digitalhouse.foodsdigitalhouse.place.place.listener;
+package br.com.digitalhouse.foodsdigitalhouse.place.listener;
 
 import br.com.digitalhouse.foodsdigitalhouse.model.Options;
 
