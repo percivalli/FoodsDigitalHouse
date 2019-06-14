@@ -65,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (!(emailLog.isEmpty()) && !(senhaLog.isEmpty())){
                     Intent intent = new Intent(LoginActivity.this, Place.class);
                     startActivity(intent);
+                    return;
                 }
             }
         });
